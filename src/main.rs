@@ -5,6 +5,7 @@ use std::env;
 
 use git_rust::init;
 use git_rust::cat_file;
+use git_rust::hash_object;
 
 fn main() {
     
@@ -12,6 +13,7 @@ fn main() {
     match args[1].as_str() {
         "init" => init(),
         "cat-file" => cat_file(&args[2..]),
+        "hash-object" => hash_object(&args[2..]),
 
         _ => println!("unkown command: args[1]"),
     }
